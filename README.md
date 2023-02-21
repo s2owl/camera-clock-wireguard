@@ -1,7 +1,13 @@
 # camera-clock
 
 Clock first
-https://learn.adafruit.com/adafruit-led-backpack/1-2-inch-7-segment-backpack-assembly
+<sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get upgrade -y
+sudo apt-get install python3-pip -y
+sudo apt-get install python3-pil -y
+sudo pip3 install --upgrade setuptools
+sudo pip3 install adafruit-circuitpython-ht16k33>
 
 Camera second
 
