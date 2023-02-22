@@ -2,6 +2,7 @@
 
 Objective: I want a have a IR camera using Motioneye and an Adafruit 1.2" clock connected to one Ras Pi Zero W.
 OS: Buster 32bit
+Disclaimer: I found that sometimes some of the updates / upgrades eventually timed out so I had to repeat them.  You need to keep an eye out for this.
 
 Wiring - https://hackster.imgix.net/uploads/attachments/408336/pyowmclock_breadboard_wWTN3jzSar.png?auto=compress%2Cformat&w=740&h=555&fit=max Note I didn't bother with the temp sensor.
 
@@ -14,6 +15,7 @@ Wiring - https://hackster.imgix.net/uploads/attachments/408336/pyowmclock_breadb
   sudo pip3 install --upgrade setuptools
   sudo pip3 install adafruit-circuitpython-ht16k33
 ```
+Download the above scripts and check it out
 
 All the clock info and wiring can be found here: https://learn.adafruit.com/adafruit-led-backpack/1-2-inch-7-segment-backpack 
 Then I made it a service by following this: https://medium.com/codex/setup-a-python-script-as-a-service-through-systemctl-systemd-f0cc55a42267
@@ -34,7 +36,7 @@ I added:
   pool 3.uk.pool.ntp.org iburst
 ```
 
-Restart the Service and chec its running with:
+Restart the service and check its running with:
 ```
   sudo service ntp restart
   sudo service ntp status
@@ -80,10 +82,15 @@ you can install it from official repos using
 and rerun
 `pip2 install motioneye`
 
-cat /etc/motioneye/motion.conf
-check if the last line contains: input -1 if not add it and then run
-sudo service motion restart
-
-run top
-find both motion PID and kill both
-run sudo service motioneye start
+### Unable to load video resource
+```
+  sudo vi cat /etc/motioneye/motion.conf
+```
+On the last line add `input -1`
+```
+  sudo vi cat /etc/motioneye/camera-1.conf
+```
+Find `videodevice /dev/video10` *note* it could be any number really.  Change it to: `videodevice /dev/video0`
+```
+  sudo service motion restart
+```
