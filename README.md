@@ -1,11 +1,13 @@
 # Camera-Clock
 
+Objective: I want a have a IR camera using Motioneye and an Adafruit 1.2" clock connected to one Ras Pi Zero W.
+OS: Buster 32bit
+
 Wiring - https://hackster.imgix.net/uploads/attachments/408336/pyowmclock_breadboard_wWTN3jzSar.png?auto=compress%2Cformat&w=740&h=555&fit=max Note I didn't bother with the temp sensor.
 
 ## Clock first
 ```
   sudo apt-get update
-  sudo apt-get upgrade
   sudo apt-get upgrade -y
   sudo apt-get install python3-pip -y
   sudo apt-get install python3-pil -y
