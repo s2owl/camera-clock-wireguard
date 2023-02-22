@@ -5,10 +5,10 @@ OS: Buster 32bit
 
 Wiring - https://hackster.imgix.net/uploads/attachments/408336/pyowmclock_breadboard_wWTN3jzSar.png?auto=compress%2Cformat&w=740&h=555&fit=max Note I didn't bother with the temp sensor.
 
-## Clock first
+## Clock First
 ```
-  sudo apt-get update
-  sudo apt-get upgrade -y
+  sudo apt-get update && sudo apt-get upgrade -y
+  sudo apt-get install ntp
   sudo apt-get install python3-pip -y
   sudo apt-get install python3-pil -y
   sudo pip3 install --upgrade setuptools
@@ -16,10 +16,31 @@ Wiring - https://hackster.imgix.net/uploads/attachments/408336/pyowmclock_breadb
 ```
 
 All the clock info and wiring can be found here: https://learn.adafruit.com/adafruit-led-backpack/1-2-inch-7-segment-backpack 
-
 Then I made it a service by following this: https://medium.com/codex/setup-a-python-script-as-a-service-through-systemctl-systemd-f0cc55a42267
 
-## Camera second
+Before you head off to the Camera - There's a bit more:
+
+### NTP
+
+Edit this file
+```
+  /etc/ntp.conf
+```
+I added:
+```
+  pool 0.uk.pool.ntp.org iburst
+  pool 1.uk.pool.ntp.org iburst
+  pool 2.uk.pool.ntp.org iburst
+  pool 3.uk.pool.ntp.org iburst
+```
+
+Restart the Service and chec its running with:
+```
+  sudo service ntp restart
+  sudo service ntp status
+```
+
+## Camera Second
 
 Based on this: https://github.com/motioneye-project/motioneye/wiki/Install-on-Raspbian-Bullseye
 As i said earlier - this is for a ras pi zero so is a 32bit OS, the above link has the 64bit version
