@@ -32,14 +32,30 @@ As i said earlier - this is for a ras pi zero so is a 32bit OS, the above link h
 ```
 The next block has to be entered one at a time.  No exceptions.
 ```
- apt-get install python2 python-dev-is-python2 -y
+  apt-get install python2 python-dev-is-python2 -y
 
- curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+  curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
 
- python2 get-pip.py
+  python2 get-pip.py
 
- apt-get install libssl-dev libcurl4-openssl-dev libjpeg-dev zlib1g-dev -y
+  apt-get install libssl-dev libcurl4-openssl-dev libjpeg-dev zlib1g-dev -y
 ```
+
+```
+  pip2 install motioneye
+  mkdir -p /etc/motioneye
+  cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
+  mkdir -p /var/lib/motioneye
+  cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
+  systemctl daemon-reload
+  systemctl enable motioneye
+  systemctl start motioneye
+```
+note: If pillow installation fails (hangs and ends at 99%),
+you can install it from official repos using
+`apt-get install python-pil -y`
+and rerun
+`pip2 install motioneye`
 
 cat /etc/motioneye/motion.conf
 check if the last line contains: input -1 if not add it and then run
