@@ -94,3 +94,4 @@ Find `videodevice /dev/video10` *note* it could be any number really.  Change it
 ```
   sudo service motion restart
 ```
+# Now to remotely manage the device(s)
