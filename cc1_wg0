@@ -1,0 +1,10 @@
+[Interface]
+Address = <IP>/24
+ListenPort = port
+PrivateKey = 
+
+[Peer]
+Public Key  T0wGy0vGp1sRzqW+QRVzCr63HVrKcx6n09KPu36qlHg=
+AllowedIPs = <IP's in the great wide world that can logon to this host>
+Endpoint = <fqdn:port>
+PersistantKeepalive = 25
