@@ -1,4 +1,4 @@
-# Camera-Clock
+# Camera-Clock-Wireguard
 
 Objective: I want a have a IR camera using Motioneye and an Adafruit 1.2" clock connected to one Ras Pi Zero W.
 OS: Buster 32bit
