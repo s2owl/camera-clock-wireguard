@@ -1,7 +1,7 @@
 # Camera-Clock-Wireguard
 
 Objective: I want a have a IR camera using Motioneye and an Adafruit 1.2" clock connected to one Ras Pi Zero W.
-OS: Buster 32bit
+OS: Bullseye 32bit
 Disclaimer: I found that sometimes some of the updates / upgrades eventually timed out so I had to repeat them.  You need to keep an eye out for this.
 
 Wiring - https://hackster.imgix.net/uploads/attachments/408336/pyowmclock_breadboard_wWTN3jzSar.png?auto=compress%2Cformat&w=740&h=555&fit=max Note I didn't bother with the temp sensor.
