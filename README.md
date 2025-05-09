@@ -47,7 +47,7 @@ Restart the service and check its running with:
   sudo service ntp status
 ```
 
-# Create Service Management
+## Create Service Management
 
 ```
   sudo apt-get install -y systemd
