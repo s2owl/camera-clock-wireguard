@@ -14,6 +14,7 @@ Wiring - https://hackster.imgix.net/uploads/attachments/408336/pyowmclock_breadb
   sudo apt-get install python3-pil -y
   sudo pip3 install --upgrade setuptools
   sudo pip3 install adafruit-circuitpython-ht16k33
+  sudo pip3 install adafruit-circuitpython-ht16k33 --break-package-system
 ```
 Download the above scripts and check it out
 
@@ -27,6 +28,8 @@ Before you head off to the Camera - There's a bit more:
 Edit this file
 ```
   /etc/ntp.conf
+  or it could be here....
+  /etc/ntpsec/ntp.conf
 ```
 I added:
 ```
@@ -41,6 +44,9 @@ Restart the service and check its running with:
   sudo service ntp restart
   sudo service ntp status
 ```
+
+You then need to refer to the content above.  Make sure you've got the clock.service and clock.py on the pi.
+
 
 ## Camera Second
 
