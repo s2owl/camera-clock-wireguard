@@ -45,7 +45,39 @@ Restart the service and check its running with:
   sudo service ntp status
 ```
 
-You then need to refer to the content above.  Make sure you've got the clock.service and clock.py on the pi.
+
+
+```
+  sudo apt-get install -y systemd
+```
+
+You then need to refer to the content above.  Make sure you've got the clock.service here: /etc/systemd/system/ just run
+```
+  sudo vi /etc/systemd/system/clock.service
+```
+and just paste the clock.service in, update the username as appropriate.  When saved (if you can't save in vi use nano) then cd ~ and then 
+```
+  sudo vi clock.py
+```
+Repeat the copy and paste exercise
+
+```
+  sudo systemctl daemon-reload
+  sudo systemctl enable clock.service
+  sudo systemctl start clock.service
+```
+
+If you need to change permissions then do this:
+```
+  sudo chmod 644 ~/clock.py
+```
+
+If you need extra support:
+```
+  sudo systemctl stop clock.service
+  sudo systemctl restart clock.service
+  sudo systemctl status clock.service
+```
 
 
 ## Camera Second
