@@ -16,6 +16,8 @@ Wiring - https://hackster.imgix.net/uploads/attachments/408336/pyowmclock_breadb
   sudo pip3 install adafruit-circuitpython-ht16k33
   sudo pip3 install adafruit-circuitpython-ht16k33 --break-package-system
 ```
+If you get a python error about being per env or system wide.  I want this system wide so it is fine to have --break-package-system
+
 Download the above scripts and check it out
 
 All the clock info and wiring can be found here: https://learn.adafruit.com/adafruit-led-backpack/1-2-inch-7-segment-backpack 
@@ -45,7 +47,7 @@ Restart the service and check its running with:
   sudo service ntp status
 ```
 
-
+# Create Service Management
 
 ```
   sudo apt-get install -y systemd
